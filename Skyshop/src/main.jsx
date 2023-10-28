@@ -3,32 +3,34 @@ import Home from './Routes/App.jsx'
 import {
   createBrowserRouter,
   RouterProvider,
-} from "react-router-dom"
+} from 'react-router-dom'
 import './index.css'
 import Layout from './Routes/layout.jsx'
+import {About} from './Routes/About.jsx'
+import {Support} from './Routes/Support.jsx'
 
 //export default llamarse como sea y sin {}
 //export nombre exacto y entre {}
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <Layout />,
     children: [
       {
-        path: "/",
+        path: '/',
         element: <Home />
       },
+      {
+        path: 'Nosotros',
+        element: <About />
+      },
+      {
+        path: 'Soporte',
+        element: <Support />
+      },
       /*{
-        path: "Nosotros",
-        element: <Nosotros />
-      },
-      {
-        path: "Soporte",
-        element: <Soporte />
-      },
-      {
-        path: "Busqueda",
+        path: 'Busqueda',
         element: <Busqueda />
       }*/
     ]
