@@ -1,8 +1,8 @@
 :root{
     --main-black-color: #333;
-    --main-white-color: #d0d0d0;
-    --main-blue-color: #3e5f8a;
-    --main-white-hover-color: #ce0505;
+    --main-white-color: #f0f0f0;
+    --main-blue-color: #6da0e4;
+    --main-white-hover-color: #c71f1f;
 }
 
 html{
@@ -79,7 +79,7 @@ body {
 
 .search {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin-top: 3rem;
     color: var(--main-white-color);
 }
