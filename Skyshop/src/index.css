@@ -2,7 +2,7 @@
     --main-black-color: #333;
     --main-white-color: #d0d0d0;
     --main-blue-color: #3e5f8a;
-    --main-white-hover-color: #ffffff;
+    --main-white-hover-color: #ce0505;
 }
 
 html{
@@ -50,6 +50,7 @@ body {
     display: flex;
     text-align: center;
     list-style: none;
+    z-index: 99999;
 }
 
 .nav .ul{
@@ -61,12 +62,12 @@ body {
     font-size: 20px;
 }
 
-.nav .li{
+.nav .ul .li{
     margin: 0 5rem;
     cursor: pointer;
 }
 
-.nav .li:hover {
+.nav .ul .li:hover {
     color: var(--main-white-hover-color);
 }
 
