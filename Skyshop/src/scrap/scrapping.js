@@ -13,27 +13,35 @@ const shops = [
 
             const page = await browser.newPage()
             await page.goto(url + localItem)
-            
-            const content = await page.$$eval('.a-size-mini.a-spacing-none.a-color-base.s-line-clamp-4 > a', elements => elements.map(e => e.href))
 
-            for (let index = 0; index < 10; index++) {
+            const content = await page.$$eval('.a-size-mini.a-spacing-none.a-color-base > a', elements => elements.map(e => e.href))
+
+            for (let index = 0; index < 3; index++) {
                 await page.goto(content[index])
-                await page.screenshot({ path: `screenshots/ebay/${item + ' ' + (index+1)}.png`})
-                //console.log(content[index])
+                await page.screenshot({ path: `screenshots/amazon/${item + ' ' + (index+1)}.png`})
             }
 
+            await page.close()
             return(true)
         }
-    }/*,
+    },
     {
         vendor: 'Ebay',
-        url: 'https://www.ebay.com/sch/i.html?_from=R40&_trksid=p2380057.m570.l1313&_nkw=',
+        url: 'https://www.ebay.com/sch/i.html?_nkw=',
         searchItem: async ({browser, url, item}) => {
-            item = item.replace(/ /g, "+")
+            let localItem = item.replace(/ /g, "+")
 
             const page = await browser.newPage()
-            await page.goto(url + item)
-            await page.screenshot({ path: `screenshots/ebay/${item}.png`})
+            await page.goto(url + localItem)
+
+            const content = await page.$$eval('.s-item__link', elements => elements.map(e => e.href))
+
+            for (let index = 1; index < 4; index++) {
+                await page.goto(content[index])
+                await page.screenshot({ path: `screenshots/ebay/${item + ' ' + (index)}.png`})
+            }
+
+            await page.close()
             return(true)
         }
     },
@@ -41,14 +49,22 @@ const shops = [
         vendor: 'Mercadolibre',
         url: 'https://listado.mercadolibre.com.mx/',
         searchItem: async ({browser, url, item}) => {
-            item = item.replace(/ /g, "-")
+            let localItem = item.replace(/ /g, "-")
 
             const page = await browser.newPage()
-            await page.goto(url + item)
-            await page.screenshot({ path: `screenshots/mercadolibre/${item}.png`})
-            return (true)
+            await page.goto(url + localItem)
+
+            const content = await page.$$eval('.ui-search-item__group__element.ui-search-link', elements => elements.map(e => e.href))
+
+            for (let index = 3; index < 6; index++) {
+                await page.goto(content[index])
+                await page.screenshot({ path: `screenshots/mercadolibre/${item + ' ' + (index - 2)}.png`})
+            }
+
+            await page.close()
+            return(true)
         }
-    }*/
+    }
 ]
 
 ;(async () => {
