@@ -4,7 +4,7 @@ export function Support() {
     }
 
     return (
-        <main>
+        <main style={{height: "82vh"}}>
             <div className='text'>
                 <h3>Para contactarnos puedes rellenar los datos o da clic <a href='mailto:soporteclienteskyshop@gmail.com' rel='noreferrer' target='_blank'>aquí</a></h3>
             </div>

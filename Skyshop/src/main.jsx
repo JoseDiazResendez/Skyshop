@@ -6,8 +6,10 @@ import {
 } from 'react-router-dom'
 import './index.css'
 import Layout from './Routes/layout.jsx'
-import {About} from './Routes/About.jsx'
-import {Support} from './Routes/Support.jsx'
+import { About } from './Routes/About.jsx'
+import { Support } from './Routes/Support.jsx'
+import { Busqueda } from './Routes/Busqueda.jsx'
+import { buscarItem } from './helpers/getData.js'
 
 //export default llamarse como sea y sin {}
 //export nombre exacto y entre {}
@@ -29,16 +31,17 @@ const router = createBrowserRouter([
         path: 'Soporte',
         element: <Support />
       },
-      /*{
-        path: 'Busqueda',
-        element: <Busqueda />
-      }*/
+      {
+        path: 'Busqueda/:objeto',
+        element: <Busqueda />,
+        loader: buscarItem
+      }
     ]
   },
 ]);
 /*
 PascalCase - Componentes
-camelCase
+camelCase - Funciones
 snake_case
 kebabk-case
 */
