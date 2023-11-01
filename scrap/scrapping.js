@@ -29,7 +29,12 @@ const shops = [
                     priceItem = 'Precio no disponible'
                 }
 
-                let rateItem = await page.$eval('#acrPopover .a-size-base.a-color-base', el => el.textContent)
+                let rateItem 
+                try {
+                    rateItem = await page.$eval('#acrPopover .a-size-base.a-color-base', el => el.textContent)
+                } catch (error) {
+                    rateItem = 'Sin calificacion'
+                }
 
                 const descriptionItem = {
                     titleItem: titleItem.trim(),
