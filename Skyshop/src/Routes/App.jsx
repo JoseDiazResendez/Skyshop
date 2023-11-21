@@ -19,7 +19,7 @@ export default function App() {
                 <button onClick={buscarObjeto} className="buscar">Buscar</button>
             </h3>
                 <div className='video'>
-                    <iframe width="900" height="500" src="https://www.youtube.com/embed/widZEAJc0QM?si=DBs9DRAwSolkRosr" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/v2Fnp8Tnu7g?si=80GTqQgeuf3tw_NJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
                 <h3 className="text">TODO LO QUE NECESITAS EN UN SOLO LUGAR</h3>
             </> :
