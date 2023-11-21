@@ -67,6 +67,8 @@ const shops = [
                     priceItem = 'Precio no disponible'
                 }
 
+                let rateItem = await page.$eval('#acrPopover .a-size-base.a-color-base', el => el.textContent)
+
                 const descriptionItem = {
                     titleItem: titleItem,
                     imgItem: imgItem,
